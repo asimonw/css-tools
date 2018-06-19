@@ -1,0 +1,16 @@
+$sizes: 0.5 0.75 1 1.25 1.5 2 2.5 3;
+
+$directions: (t: top, b: bottom, l: left, r: right);
+
+$types: (m: margin, p: padding);
+
+@each $short-type, $full-type in $types {
+    @each $short-dir, $full-dir in $directions {
+        @each $size in $sizes {
+            $i: index($sizes, $size);
+            .#{$short-type}#{$short-dir}-#{$i} {
+                #{$full-type}-#{$full-dir}: #{$size}rem;
+            }
+        }
+    }
+}

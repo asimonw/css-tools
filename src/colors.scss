@@ -1,0 +1,14 @@
+$colors: (
+    primary: teal,
+    secondary: darkorange
+);
+
+@each $color-name, $color in $colors {
+    .is-#{$color-name} {
+        background-color: $color;
+    }
+
+    .has-text-#{$color-name} {
+        color: $color;
+    }
+}
